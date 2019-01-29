@@ -3,8 +3,23 @@
     "id": 1,
     "title": "Modern JavaScript",
     "master": [
-      {
+      {        
         "title": "Modern JavaScript for React - ES6 and beyond",
+        "competence": [
+          "Dapat memahami apakah ES6 itu",          
+          "Dapat memahami kenapa harus pakai ES6",
+          "Dapat mengetahui fitur-fitur apa saja yang ada di ES6"
+        ],
+        "course": [          
+          {
+            "title":"Sejarah",
+            "content":"Perusahaan bernama Netscape/Mozilla adalah pencipta pertama JavaScript yang digunakan untuk melakukan manipulasi HTML/DOM di browser Netscape/Firefox. Karena kesuksesan Netscape mengembangkan bahasa JavaScript, Microsoft pun tak mau ketinggalan, mereka menciptakan bahasa serupa bernama JScript. Perbedaan inilah yang menyebabkan hasil yang berbeda ketika website dijalankan di browser Netscape dan IE. Untuk mengatasi hal tersebut, dibuatlah EcmaScript yang merupakan standarisasi dari client-side scripting. Sehingga JavaScript dan JScript disepakati sebagai implementasi dari EcmaScript, termasuk juga Action Script. Namun karena JavaScript adalah bahasa yang paling pertama dibuat, maka orang-orang lebih mengistilahkan EcmaScript dengan Sebutan JavaScript.EcmaScript sendiri sebenarnya dilahirkan dari JavaScript asli, sehingga secara fitur, tidak ada perbedaan antara JavaScript dan EcmaScript. Sedangkan untuk versi JScript sendiri, ada sedikit perbedaan namun masih tetap mendukung fitur-fitur yang ada di versi standar EcmaScript. JavaScript yang kita kenal saat ini, adalah EcmaScript versi 5 (ES5). EcmaScript sendiri saat ini sudah sampai versi 6 (ES6/ES2015), namun belum support untuk semua browser. Sehingga untuk menggunakannya, ES6 harus ditranspile (dirubah) menjadi ES5/JavaScript dengan tool yang bernama Babel."
+          },
+          {
+            "title":"Javascript ES6",
+            "content":"Javascript ES6 membawa sintaks-sintaks baru dan fitur-fitur baru yang mengagumkan untuk membuat kode kita lebih modern dan mudah untuk dibaca. Ini membuat kita hanya menuliskan sedikit kode dan lebih banyak manfaatnya. ES6 memperkenalkan kita pada fitur-fitur seperti arrow functions, template literal, class, destructuring, modules dan masih banyak lagi. Pada materi berikutnya kita akan belajar bagaimana fitur-fitur ini bekerja."
+          }
+        ],
         "keywords": [
           "JavaScript(JS)",
           "es6 2015"
@@ -14,15 +29,26 @@
           "Standarisasi JavaScript sekarang memakai es6 2015"
         ],
         "summarize": "Untuk memulai belajar React diharuskan terlebih dahulu harus mengerti bahasa pemrograman JavaScript, selain itu juga di haruskan untuk memahami sintak-sintak es6 2015. Seperti let, const, template literal, arrow functions, class syntax, destructuring, default parameters, Rest operator, Spread operator, module dan promises. Karena dalam pembuatan aplikasi-aplikasi JavaScript, kita akan sering menggunakan sintaks-sintaks es6 kedepannya.",
-        "usable_link": [
+        "useable_link": [
           {
-            "url": "",
-            "title": ""
+            "url": "https://www.slideshare.net/rizafahmi/essentials-and-impactful-features-of-es6",
+            "title": "ES6 2015"
+          },
+          {
+            "url": "https://www.tutorialspoint.com/javascript/",
+            "title": "Javacsript"
           }
         ]
       },
       {
         "title": "Let and Const vs Var",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": [
           "var",
           "let",
@@ -35,10 +61,23 @@
           "const hanya bisa dipakai di dalam block scope dan bersifat constant tidak bisa dirubah.",
           "selain const, deklarasi variabel bisa dirubah."
         ],
-        "summarize": "pada dasarnya deklarasi variabel di javascript hanya terbagi ke dalam 3 bagian var, let, dan const. sesuai dengan scope dan kegunaannya. rekomendasi untuk sekarang karena hampir semua browser telah support ES6 2015 maka untuk deklarasi variabel lebih direkomendasikan untuk memakai let daripada var. Alasannya sederhana karena var lebih global scope maka jika kita mendeklarasikan variabel dengan var di awal code dan jika code ini sudah jutaan dan kita deklarasikan dengan nama yang sama maka kode yang berada di awal tadi akan tertimpa. Sehingga menyebabkan kode tadi sudah tidak berfungsi lagi."
+        "summarize": "pada dasarnya deklarasi variabel di javascript hanya terbagi ke dalam 3 bagian var, let, dan const. sesuai dengan scope dan kegunaannya. rekomendasi untuk sekarang karena hampir semua browser telah support ES6 2015 maka untuk deklarasi variabel lebih direkomendasikan untuk memakai let daripada var. Alasannya sederhana karena var lebih global scope maka jika kita mendeklarasikan variabel dengan var di awal code dan jika code ini sudah jutaan dan kita deklarasikan dengan nama yang sama maka kode yang berada di awal tadi akan tertimpa. Sehingga menyebabkan kode tadi sudah tidak berfungsi lagi.",
+        "useable_link": [
+          {
+            "url":"https://medium.com/coderupa/es6-var-let-const-apa-bedanya-1cd4daaee9f0",
+            "title":"var, let, const dan scope"
+          }
+        ]
       },
       {
         "title": "Arrow Functions, Class syntax, Template literal",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": [
           "arrow function",
           "template literal",
@@ -50,35 +89,68 @@
           "Salah satu fitur yang banyak digunakan dari ES6 adalah arrow function. Dari namanya kita sudah bisa mengira, ini adalah fitur pada function. Salah satu kegunaan dari fitur ini adalah syntax javascript kita menjadi lebih ringkas.",
           "Salah satu keuntungan kembali kita menggunakan arrow function adalah kita bisa menggunakan ‘this’ tanpa perlu membuat that = this. Ada kawan-kawan yang pernah pakai that = this?",
           "Syntax Arrow Function pada ES6 secara umum seperti ini. () => { ... } // no parameter",
+<<<<<<< HEAD
           "Class dapat mencakup 2 hal berikut : Sebuah fungsi konstruktor diinisialisasi dengan sejumlah parameter, yang akan ditugaskan sebagai properti this, mengacu pada fungsi itu sendiri. Huruf pertama dari pengidentifikasi akan dikapitalisasi oleh konvensi. Kita tahu fungsi konstruktor dimaksudkan untuk menjadi cetak biru objek dengan huruf kapital huruf pertama dari penginisialisasi (yang opsional) dan melalui keakraban dengan sintaksis. Kata classkunci berkomunikasi dengan cara yang lebih mudah, tujuan fungsi kami.Satu-satunya perbedaan dalam sintaks inisialisasi adalah menggunakan classkata kunci alih-alih function, dan menetapkan properti di dalam constructor()metode.",
           "Template Literal merupakan cara penulisan syntac di ES6, sebelum untuk menggabungkan karakter atau string menggunakan tanda tambah maka kalau di menggunakan Template Literal cukup menggunakan tanda ${} "
+=======
+          "Class dapat mencakup 2 hal berikut : Sebuah fungsi konstruktor diinisialisasi dengan sejumlah parameter, yang akan ditugaskan sebagai properti this, mengacu pada fungsi itu sendiri. Huruf pertama dari pengidentifikasi akan dikapitalisasi oleh konvensi. Kita tahu fungsi konstruktor dimaksudkan untuk menjadi cetak biru objek dengan huruf kapital huruf pertama dari penginisialisasi (yang opsional) dan melalui keakraban dengan sintaksis. Kata classkunci berkomunikasi dengan cara yang lebih mudah, tujuan fungsi kami.Satu-satunya perbedaan dalam sintaks inisialisasi adalah menggunakan classkata kunci alih-alih function, dan menetapkan properti di dalam constructor()metode."
+
+>>>>>>> bba63bca5fab909e5f6e860add8d71812457dce0
         ],
         "summarize": "Arrow function merupakan cara penulisan syntax dari ES6 dengan tujuan utamanya adalah membuat syntax javascript kita menjadi lebih ringkas. Sedangkan Class suatu deklarasi kelaf dan class memiliki 2 jenis parameter yaitu function dan constructor.",
-        "usable_link":[
-        {
-          "url": "https://medium.com/@renopp/kenalan-dengan-es6-javascript-introduction-variable-arrow-function-part1-6bd5c148473b",
-          "title": "Arrow Function"
-        },
-        {
-          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor",
-          "title": "Class Syntax"
-        },
-        {
-          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals",
-          "title": "Template Literals"
-        }
-      ]
-        
+        "useable_link": [
+          {
+            "url": "https://medium.com/@renopp/kenalan-dengan-es6-javascript-introduction-variable-arrow-function-part1-6bd5c148473b",
+            "title": "Arrow Function"
+          },
+          {
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor",
+            "title": "Class Syntax"
+          },
+          {
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals",
+            "title": "Template Literals"
+          }
+        ]
       },
       {
         "title": "Destructuring",
-        "keywords": ["Destructuring"],
-        "notes": ["Destructuring/Destrukturisasi adalah cara yang mudah untuk mengekstraksi beberapa nilai dari variabel, objek dan Array yang tersimpan. Itu dapat digunakan di lokasi yang menerima data. Cara mengekstrak yang ditentukan melalui nilai pola"],
-        "summarize": "Singkatnya, destructuring itu adalah bagaimana kita menyusun nilai dari variabel, object maupun array, menjadi lebih terstruktur"
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
+        "keywords": [
+          "Destructuring"
+        ],
+        "notes": [
+          "Destructuring/Destrukturisasi adalah cara yang mudah untuk mengekstraksi beberapa nilai dari variabel, objek dan Array yang tersimpan.",
+          "Itu dapat digunakan di lokasi yang menerima data. Cara mengekstrak yang ditentukan melalui nilai pola"
+        ],
+        "summarize": "Singkatnya, destructuring itu adalah bagaimana kita menyusun nilai dari variabel, object maupun array, menjadi lebih terstruktur",
+        "useable_link": [
+          {
+            "url": "https://icalrn.id/destructuring-assignment-pada-javascript/",
+            "title": "Destructuring Assignment"
+          }
+        ]
       },
       {
         "title": "Default parameters, Rest parameter, Spread operator",
-        "keywords": ["default parameters", "rest parameter", "spread operator"],
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
+        "keywords": [
+          "default parameters",
+          "rest parameter",
+          "spread operator"
+        ],
         "notes": [
           "Default Parameter adalah membuat nilai/value parameter default pada sebuah function",
           "dengan memberi value langsung kepada parameter sebuah function sehingga tidak perlu membuat",
@@ -88,14 +160,41 @@
           "Rest Parameter sama dengan Spread Operator diawali dengan tanda titik tiga, namun pada rest parameter",
           "hanya mengambil nilai sisa dari sebuah array"
         ],
-        "summarize": "Dengan menggunakan Default parameter, spread operator dan rest parameter dari es6 membuat kode kita menjadi lebih clean code"
+        "summarize": "Dengan menggunakan Default parameter, spread operator dan rest parameter dari es6 membuat kode kita menjadi lebih clean code",
+        "useable_link": [
+          {
+            "url": "https://css-tricks.com/lets-learn-es2015/#es2015-rest%20parameters",
+            "title": "more detail about.."
+          }
+        ]
       },
       {
         "title": "Iterators and functional programming in JS",
-        "keywords": ["Itertors","next()","for...of"],
-        "notes": ["Iterator adalah objek yang mendefinisikan urutan dan berpotensi mengembalikan nilai pada saat penghentiannya. ","Lebih khusus iterator adalah objek apa pun yang mengimplementasikan protokol Iterator dengan memiliki  next()metode yang mengembalikan objek dengan dua properti  value: nilai berikutnya dalam urutan; dan done, yang truejika nilai terakhir dalam urutan sudah dikonsumsi. Jika value ada di sampingnya done, itu adalah nilai pengembalian iterator.","The for...ofpernyataan menciptakan iterasi loop di atas benda iterable , termasuk: built-in String, Array,  Arraybenda -seperti (misalnya,  argumentsatau  NodeList), TypedArray, Map, Set, dan user-defined iterables. Itu meminta kait iterasi kustom dengan pernyataan yang akan dieksekusi untuk nilai setiap properti objek yang berbeda.","String, Array, TypedArray, MapDan Setsemua built-in iterables, karena prototipe mereka benda semua memiliki Symbol.iteratormetode.","Sebelum ES6 tidak ada cara dalam javascript untuk menjeda mengeksekusi suatu fungsi di beberapa titik, kemudian datang kemudian ke titik yang sama dan melanjutkan eksekusi fungsi.  Tetapi dengan fungsi generator kita dapat melakukan itu, karena fungsi generator ketika dieksekusi mengembalikan sebuah iterator, dan alih-alih berhenti di setiap nilai / elemen dan mengembalikan iteratorHasil dengan masing-masing .next (), fungsi generator berhenti di setiap kata kunci hasil dan mengembalikan nilai di sebelah jika ada. Untuk menentukan fungsi generator, Anda perlu menambahkan * antara fungsi kata kunci dan nama fungsi.","String dapat diubah, tetapi mereka mengulangi lebih dari titik kode Unicode, yang masing-masing terdiri dari satu atau dua karakter JavaScript:","Peta adalah iterables atas entri mereka. Setiap entri dikodekan sebagai pasangan [kunci, nilai], sebuah Array dengan dua elemen. Entri selalu diiterasi secara deterministik, dalam urutan yang sama di mana mereka ditambahkan ke peta.","Set adalah iterables atas elemen mereka (yang iterated di dalam urutan yang sama di mana mereka ditambahkan ke Set).","Array (dan array yang diketik) adalah iterables atas elemen mereka:"],
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
+        "keywords": [
+          "Itertors",
+          "next()",
+          "for...of"
+        ],
+        "notes": [
+          "Iterator adalah objek yang mendefinisikan urutan dan berpotensi mengembalikan nilai pada saat penghentiannya. ",
+          "Lebih khusus iterator adalah objek apa pun yang mengimplementasikan protokol Iterator dengan memiliki  next()metode yang mengembalikan objek dengan dua properti  value: nilai berikutnya dalam urutan; dan done, yang truejika nilai terakhir dalam urutan sudah dikonsumsi. Jika value ada di sampingnya done, itu adalah nilai pengembalian iterator.",
+          "The for...ofpernyataan menciptakan iterasi loop di atas benda iterable , termasuk: built-in String, Array,  Arraybenda -seperti (misalnya,  argumentsatau  NodeList), TypedArray, Map, Set, dan user-defined iterables. Itu meminta kait iterasi kustom dengan pernyataan yang akan dieksekusi untuk nilai setiap properti objek yang berbeda.",
+          "String, Array, TypedArray, MapDan Setsemua built-in iterables, karena prototipe mereka benda semua memiliki Symbol.iteratormetode.",
+          "Sebelum ES6 tidak ada cara dalam javascript untuk menjeda mengeksekusi suatu fungsi di beberapa titik, kemudian datang kemudian ke titik yang sama dan melanjutkan eksekusi fungsi.  Tetapi dengan fungsi generator kita dapat melakukan itu, karena fungsi generator ketika dieksekusi mengembalikan sebuah iterator, dan alih-alih berhenti di setiap nilai / elemen dan mengembalikan iteratorHasil dengan masing-masing .next (), fungsi generator berhenti di setiap kata kunci hasil dan mengembalikan nilai di sebelah jika ada. Untuk menentukan fungsi generator, Anda perlu menambahkan * antara fungsi kata kunci dan nama fungsi.",
+          "String dapat diubah, tetapi mereka mengulangi lebih dari titik kode Unicode, yang masing-masing terdiri dari satu atau dua karakter JavaScript:",
+          "Peta adalah iterables atas entri mereka. Setiap entri dikodekan sebagai pasangan [kunci, nilai], sebuah Array dengan dua elemen. Entri selalu diiterasi secara deterministik, dalam urutan yang sama di mana mereka ditambahkan ke peta.",
+          "Set adalah iterables atas elemen mereka (yang iterated di dalam urutan yang sama di mana mereka ditambahkan ke Set).",
+          "Array (dan array yang diketik) adalah iterables atas elemen mereka:"
+        ],
         "summarize": " terator adalah bagian dari apa yang disebut protokol ( antarmuka ditambah aturan untuk menggunakannya ) untuk iterasi. Karakteristik utama dari protokol ini adalah sekuensial: iterator mengembalikan nilai satu per satu. Itu berarti bahwa jika struktur data yang dapat diulang adalah non-linier (seperti pohon), iterasi akan membuat garis itu. Iterable sumber data yaitu Peta, Set, Array",
-        "usable_link":[
+        "useable_link": [
           {
             "url": "https://medium.com/dubizzletechblog/introduction-to-javascript-iterables-iterators-and-generators-a26be413dfd9",
             "title": "Iterators and functional"
@@ -104,10 +203,25 @@
       },
       {
         "title": "Modules",
-        "keywords": ["import", "define", "require"],
-        "notes": ["Modul adalah bagian dari program yang menentukan bagian mana yang menjadi sandarannya dan fungsionalitas apa yang disediakan untuk modul lain untuk digunakan", "Memecah-mecah kode program menjadi banyak bagian-bagian yang lebih kecil. Biasanya bagian kecil dari kode ini disebut dengan nama modul. Setiap kode modul memiliki peranan spesifik, dan biasanya sebuah modul terdiri dari beberapa fungsi. Semakin spesifik dan sejenis fungsi yang terkumpul di dalam sebuah modul semakin baik. Tingkat kecocokan fungsi-fungsi di dalam modul ini kita kenal dengan istilah cohesion.", "Setelah kode program dipecah menjadi bagian-bagian kecil, masing-masing komponen kecil ini kemudian dapat kita hubungkan untuk menjadi sebuah komponen yang lebih besar atau bahkan program jadi." ],
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
+        "keywords": [
+          "import",
+          "define",
+          "require"
+        ],
+        "notes": [
+          "Modul adalah bagian dari program yang menentukan bagian mana yang menjadi sandarannya dan fungsionalitas apa yang disediakan untuk modul lain untuk digunakan",
+          "Memecah-mecah kode program menjadi banyak bagian-bagian yang lebih kecil. Biasanya bagian kecil dari kode ini disebut dengan nama modul. Setiap kode modul memiliki peranan spesifik, dan biasanya sebuah modul terdiri dari beberapa fungsi. Semakin spesifik dan sejenis fungsi yang terkumpul di dalam sebuah modul semakin baik. Tingkat kecocokan fungsi-fungsi di dalam modul ini kita kenal dengan istilah cohesion.",
+          "Setelah kode program dipecah menjadi bagian-bagian kecil, masing-masing komponen kecil ini kemudian dapat kita hubungkan untuk menjadi sebuah komponen yang lebih besar atau bahkan program jadi."
+        ],
         "summarize": "Pembuatan modul dari kode program dapat dilakukan dengan banyak cara, seperti mengumpulkan fungsi-fungsi ke dalam kelas atau objek, dan kmeudian memasukkan kode tersebut ke dalam sebuah file. Bagian kedua, di mana kita dapat memanggil modul-modul lain dengan mudah, biasanya didukung secara langsung oleh bahasa pemrograman yang digunakan. Contohnya, pada bahasa Java kita memiliki perintah import dan pada C# kita memiliki perintah using. ",
-        "usable_link": [
+        "useable_link": [
           {
             "url": "https://bertzzie.com/knowledge/javascript-lanjut/Javascript-Module-System.html",
             "title": "Modules"
@@ -116,46 +230,87 @@
       },
       {
         "title": "Promises",
-        "keywords":[".then",".catch"],
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
+        "keywords": [
+          ".then",
+          ".catch"
+        ],
         "notes": [
           "Promise adalah built in method or built in function yang terdapat pada java script yang berguna untuk menangkap event atau suatu kejadian ketika menggunakan asyncronous java script , dimana kita dapat melihat suatu event berhasil dilakukan atau gagal untuk dilakukan ",
           "untuk menggunakan mendapatkan nilai true , atau menangkap bahwa event berhasil dilakukan menggunakan methode .then",
           "untuk mendapatkan nilai false , atau menangkap bahwa event gagal dilakukan menggunakan methode .cacth"
         ],
         "summarize": "Promise berguna untuk mendapatkan nilai true atau false , dimana pada saat kita melakukan asyncronous javascript kita dapat dengan mudah untuk mendapatkan hasil apakah event yang  kita lakukan berhasil dilakukan atau gagal dilakukan ",
-        "usable_link":[
+        "useable_link": [
           {
-            "url":"https://blog.andi.dirgantara.co/promise-pada-javascript-24e544c8bd0d",
-            "title":"more detail about promise"
+            "url": "https://blog.andi.dirgantara.co/promise-pada-javascript-24e544c8bd0d",
+            "title": "more detail about promise"
           }
         ]
       },
       {
         "title": "ES6 exercise using TDD",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       }
     ]
   },
   {
     "id": 2,
-    "title": "Thinking in React",
+    "title": "Thinking in React",    
     "master": [
       {
         "title": "The Imperative to Declarative Shift",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Componentization",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "What is React made up of",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
@@ -163,19 +318,56 @@
           "Props & State",
           "Classes Vs. Functions",
           "One way data binding"
-        ]
+        ],
+        "useable_link": []
       },
       {
         "title": "Composition",
-        "keywords": "",
-        "notes": "",
-        "summarize": ""
-      },
-      {
-        "title": "Virtual DOM and JSX",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
+        "useable_link": []
+      },
+      {
+        "title": "Virtual DOM and JSX",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
+        "keywords": [
+          "Virtual DOM",
+          "JSX"
+        ],
+        "notes": [
+          "Virtual DOM adalah API pemrograman untuk dokumen HTML dan XML.",
+          "Ini mendefinisikan struktur logis dokumen dan cara dokumen diakses dan dimanipulasi.",
+          "DOM adalah singkatan dari Document Object Model.",
+          "Dan JSX merupakan sebuah sintaks extension pada javascript, untuk di gunakan pada React.",
+          "Sintaks kode JSX merupakan kode HTML yang di sematkan pada kode javascript.",
+          "JSX bukanlah sintaks javascript, sehingga browser tidak bisa membaca sintaks ini.",
+          "Dibutuhkan sebuah JSX compiler yang di gunakan untuk menerjemahkan JSX kedalam bahasa regular javascript agar bisa terbaca oleh browser."
+        ],
+        "summarize": "Singkatnya dengan virtual DOM kita ngebuat sebuah abstraksi DOM yang biasa disebut sebagai component. Component ini lah yang nanti nya di render ke dalam file HTML dengan JSX maka itu semua dapat terjadi",
+        "useable_link": [
+          {
+            "url": "https://ekaprasasti.com/memulai-reactjs-dan-dasar-jsx/",
+            "title": "ReactJSDOM&JSX"
+          },
+          {
+            "url": "https://kudo.co.id/engineering/2017/02/16/mengenal-virtual-dom-pada-reactjs/",
+            "title": "Conclusion Virtual DOM"
+          }
+        ],
         "detail": [
           "React Components, Elements, and Instances",
           "JSX and React.createElement"
@@ -183,47 +375,80 @@
       },
       {
         "title": "Developer tools",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       }
     ]
   },
   {
     "id": 3,
-    "title": "Routing & Data Fetching",
+    "title": "Routing & Data Fetching",    
     "master": [
       {
         "title": "React Router v4",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
         "detail": [
           "Declarative routing",
           "Implementing a master-detail web application"
-        ]
+        ],
+        "useable_link": []
       },
       {
         "title": "Component lifecycle",
-        "keywords": ["component lifecycle"],
-        "notes": "Component Lifecycle adalah alur jalannya pengeksekusian component dari awal hingga akhir",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
+        "keywords": [
+          "component lifecycle"
+        ],
+        "notes": ["Component Lifecycle adalah alur jalannya pengeksekusian component dari awal hingga akhir"],
         "summarize": "Beberapa method mempunyai prefix will dan did yang menunjukkan kapan method tersebut akan dieksekusi.",
         "useable_link": [
           {
-            "url":"https://medium.com/skyshidigital/react-component-lifecycle-wajib-bagi-yang-sedang-belajar-react-b46049b97788",
+            "url": "https://medium.com/skyshidigital/react-component-lifecycle-wajib-bagi-yang-sedang-belajar-react-b46049b97788",
             "title": "Lifecycle Component ES6"
           }
         ]
       },
       {
         "title": "Data management",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
         "detail": [
           "Presentational Components Vs. Container Components",
           "Data fetching"
-        ]
+        ],
+        "useable_link": []
       }
     ]
   },
@@ -233,23 +458,39 @@
     "master": [
       {
         "title": "Forms management in React",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
         "detail": [
           "Controlled Components",
           "Uncontrolled Components"
-        ]
+        ],
+        "useable_link": []
       },
       {
         "title": "Authentication",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
         "detail": [
           "JWT",
           "Authorization, public and private pages"
-        ]
+        ],
+        "useable_link": []
       }
     ]
   },
@@ -259,27 +500,59 @@
     "master": [
       {
         "title": "CSS Vs JS",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Styled-components",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Component libraries comparison: SemanticUI, MaterialUI, Rebass, and React-Bootstrap",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Storybook",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       }
     ]
   },
@@ -289,9 +562,17 @@
     "master": [
       {
         "title": "Introduction to functional programming",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
+        "useable_link": [],
         "detail": [
           "Data and behaviour",
           "Data in, data out",
@@ -301,9 +582,17 @@
       },
       {
         "title": "Redux Principles",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
+        "useable_link": [],
         "detail": [
           "Store, Reducers, Actions",
           "Unique source of truth"
@@ -311,27 +600,59 @@
       },
       {
         "title": "React-Redux: Provider and Connect",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Build your own version of Redux using TDD",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Fetching data from the server to Redux",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Configure Redux from scratch in a React app",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       }
     ]
   },
@@ -341,27 +662,59 @@
     "master": [
       {
         "title": "Build your own test framework in JavaScript",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Testing Redux using Jest",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "Mocking and testing API calls",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       },
       {
         "title": "White-box testing Vs. Black-box testing",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
-        "summarize": ""
+        "summarize": "",
+        "useable_link": []
       }
     ]
   },
@@ -371,22 +724,38 @@
     "master": [
       {
         "title": "Functional programming (FP)",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
         "detail": [
           "Composing React components"
-        ]
+        ],
+        "useable_link": []
       },
       {
         "title": "Advanced React patterns to reuse functionality across components",
+        "competence": [],
+        "course": [
+          {
+            "title":"",
+            "content":""
+          }
+        ],
         "keywords": "",
         "notes": "",
         "summarize": "",
         "detail": [
           "Higher-Order Components (HOCs)",
           "Declarative composition using the Render Props (AKA function as children)"
-        ]
+        ],
+        "useable_link": []
       }
     ]
   }

@@ -76,6 +76,37 @@ class Detail extends Component {
                   )}
                 </div>
               </div>
+              {dataDetail.competence.length > 0 ? (
+                <div className="competence">
+                  <div className="table-background">
+                    <h4>Kompetensi</h4>
+                  </div>                  
+                  {dataDetail.competence.map((item,index)=> {
+                    return (
+                      <div className="table-competence" key={item}>
+                        <div className="number">
+                          <span>{index+1}.</span>                     
+                        </div>
+                        <div className={ index%2 == 0 ? "item" : "item background" } >
+                          <span>{item}</span>                        
+                        </div>                        
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
+              {dataDetail.course.length > 0 ? (
+                <div className="wrapper-course">
+                  {dataDetail.course.map(item => {
+                    return (
+                      <div key={item.title}>                        
+                        <h4 className="title-course">{item.title}</h4>
+                        <p className="content-course">{item.content}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
               {dataDetail.notes.length > 0 ? (
                 <div className="notes">
                   <div>
@@ -104,7 +135,22 @@ class Detail extends Component {
                   ) : null}
                 </div>
               ) : null}
-              {dataDetail.notes.length > 0 ? (
+              {dataDetail.useable_link.length > 0 ? (
+                <div className="wrapper-source">
+                  <div className="source">
+                    <p className="source-belajar">Sumber Belajar : </p>
+                    {dataDetail.useable_link.map(item => (
+                      <ul className="div-url">
+                        <li className="title-url">{item.title} </li>
+                        <a href={item.url} target="_blank" className="text-url">
+                          {item.url}
+                        </a>
+                      </ul>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+              {/* {dataDetail.notes.length > 0 ? (
                 <div className="exercise">
                   <i className="title-keyword">
                     Tugas : keyword harus ditulis di buku tulis dan dijabarkan
@@ -112,7 +158,7 @@ class Detail extends Component {
                     Sesuai dengan pemahaman yang kalian pahami.
                   </i>
                 </div>
-              ) : null}
+              ) : null} */}
               {dataDetail.summarize.length > 0 ? (
                 <div className="summarize">
                   <i className="title">kesimpulan : </i>
