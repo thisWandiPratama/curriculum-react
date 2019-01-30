@@ -536,9 +536,7 @@
     "master": [
       {
         "title": "Forms management in React",
-        "competence": [
-          "Dapat membuat form dengan aturan react"
-        ],
+        "competence": [ "Dapat membuat form dengan aturan react"],
         "course": [
           {
             "title":"Dasar Controlled Component dan Uncontrolled Component",
@@ -561,15 +559,12 @@
           "Pada form handler (onSubmit) jangan lupa untuk memberikan fungsi e.preventDefault() untuk menghilangkan default behavior dari browser agar saat di klik submit tidak mengarahkan ke halaman baru.",
           "Jangan lupa melakukan bind terhadap handler pada form. hal ini wajib , jika handler tidak dilakukan binding terhadap komponen maka tidak dapat menggunakan fungsi this. Padahal fungsi this tersebut digunakan untuk merubah state dari komponen (setState).",
           "untuk mengambil nilai dari suatu input kita menggunakan handler dimana fungsi untuk mengambil valuenya adalah event.target.value. Jika lupa apa saja nilai pada event tersebut dapat melakukan logging pada browser dengan perintah console.log. Hasil bisa lihat disini https://degananda.com/react-form-handling-dasar-controlled-component ",
-          "Uncontrolled Components: Default Values, dalam  lifecycle rendering React, atribut nilai pada elemen formulir akan menimpa nilai dalam DOM. Dengan uncontrolled component, Anda sering ingin React menentukan nilai awal, tetapi membiarkan pembaruan berikutnya tidak terkontrol. Untuk menangani kasus ini, Anda dapat menentukan atribut defaultValue alih-alih nilai. Contoh https://reactjs.org/docs/uncontrolled-components.html. The file input Tag, Dalam HTML, <input type = file > memungkinkan pengguna memilih satu atau lebih file dari penyimpanan perangkat mereka untuk diunggah ke server atau dimanipulasi oleh JavaScript melalui File API. <input type = file /> Dalam React, <input type = file /> selalu merupakan komponen yang tidak terkontrol karena nilainya hanya dapat ditetapkan oleh pengguna, dan tidak secara terprogram."
-
-        ],
+          "Uncontrolled Components: Default Values, dalam  lifecycle rendering React, atribut nilai pada elemen formulir akan menimpa nilai dalam DOM. Dengan uncontrolled component, Anda sering ingin React menentukan nilai awal, tetapi membiarkan pembaruan berikutnya tidak terkontrol. Untuk menangani kasus ini, Anda dapat menentukan atribut defaultValue alih-alih nilai. Contoh https://reactjs.org/docs/uncontrolled-components.html. The file input Tag, Dalam HTML, <input type = file > memungkinkan pengguna memilih satu atau lebih file dari penyimpanan perangkat mereka untuk diunggah ke server atau dimanipulasi oleh JavaScript melalui File API. <input type = file /> Dalam React, <input type = file /> selalu merupakan komponen yang tidak terkontrol karena nilainya hanya dapat ditetapkan oleh pengguna, dan tidak secara terprogram."],
         "summarize": "Form pada react harus kita atur flow dari state. Baik pada saat form input pertama kali dibuat kemudian terjadi perubahan hingga pada saat disubmit oleh user. Hal seperti inilah yang disebut dengan controlled component.Ini berkaitan dengan komponen DOM stateful (elemen formulir) dan dokumen React menjelaskan perbedaan: Komponen Terkendali adalah komponen yang mengambil nilainya saat ini melalui alat peraga dan memberi tahu perubahan melalui panggilan balik seperti onChange. Komponen induk Controls itu dengan menangani panggilan balik dan mengelola statusnya sendiri dan meneruskan nilai-nilai baru sebagai alat peraga ke komponen yang dikontrol. Anda juga bisa menyebutnya dumb component. Komponen yang tidak terkontrol adalah komponen yang menyimpan keadaannya sendiri secara internal, dan Anda meminta DOM menggunakan referensi untuk menemukan nilai saat ini ketika Anda membutuhkannya. Ini sedikit lebih mirip HTML tradisional.",
         "detail": [
           "Controlled Components",
           "Uncontrolled Components"
         ],
-<<<<<<< HEAD
         "useable_link": [
           {
             "url": "https://degananda.com/react-form-handling-dasar-controlled-component/",
@@ -579,11 +574,8 @@
             "url": "https://reactjs.org/docs/uncontrolled-components.html",
             "title": "Dasar Uncontrolled Components"
           }
-        ]
-=======
-        "useable_link": [],
+        ],
         "images": []
->>>>>>> f835e5890fd1f3844b6a64d9abd1e70139ae24ae
       },
       {
         "title": "Authentication",
@@ -647,7 +639,7 @@
           "JWT",
           "Authorization, public and private pages"
         ],
-<<<<<<< HEAD
+
         "useable_link": [
           {
             "url": "https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e",
@@ -657,11 +649,14 @@
             "url": "https://medium.com/@rajaraodv/securing-react-redux-apps-with-jwt-tokens-fcfe81356ea0",
             "title": "Other Source : Securing React Redux Apps With JWT Tokens  "
           }
+        ],
+
+        "images":[
+          {
+            "url": "",
+            "title": ""
+          }
         ]
-=======
-        "useable_link": [],
-        "images": []
->>>>>>> f835e5890fd1f3844b6a64d9abd1e70139ae24ae
       }
     ]
   },
