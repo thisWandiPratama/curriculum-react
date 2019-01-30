@@ -29,7 +29,7 @@
             transform: translateX(-70px);        
         }        
         .button-detail {
-            background: $primary-color;
+            background: $secondary-color;
             height: 40px;
             width: 40px;
             display: flex;
@@ -43,11 +43,14 @@
                 color: #fff;
             }            
         }
+        .button-detail:hover {
+            background: #eae6c5;
+        }
         .button-rotate-up {
             transform: rotate(180deg);
         }
         .button-detail-active {
-            background: $primary-color;
+            background: $secondary-color;
             height: 40px;
             width: 40px;
             display: flex;
@@ -61,6 +64,9 @@
                 color: #fff;
             }            
         }
+        .button-detail-active:hover {
+            background: #eae6c5;
+        }
         .button-rotate {
             transform: rotate(90deg);
         }            
@@ -69,7 +75,11 @@
         line-height: 2em;
     }
     .italic {        
+        color: $secondary-gold-color;
         cursor: pointer;
+    }
+    .italic:hover {
+        color: #eae6c5;
     }
 }
 
