@@ -5,16 +5,103 @@
     "master": [
       {
         "title": "Foundation",
-        "competence": [],
+        "competence": [
+          "Dapat Memahami Dasar Foundation",
+          "Dapat mengetahui dan menggunakan components",
+          "Mengetahui Fungsi dan Komponen-Komponen Layout, Style, List, Forms"
+        ],
         "course": [
           {
             "title": "",
-            "content": ""
-          }
+            "content": "Foundation kaya akan fitur dan mudah disesuaikan. Bereaksi di sisi lain adalah luar biasa karena kesederhanaannya. Ini bahkan lebih luar biasa bila dikombinasikan dengan Redux dan Immutable.Setelah membangun beberapa aplikasi dengan React dan Foundation, kami perhatikan bahwa kami menulis komponen yang sama berulang kali. Pertama kami mencoba menemukan perpustakaan yang akan melakukan pekerjaan, tetapi tidak ada yang memenuhi kebutuhan kami. Jadi kami mengumpulkan catatan kami, mulai mengkode dan inilah hasilnya. Tujuannya adalah untuk membungkus setiap bagian Yayasan menjadi komponen Bereaksi yang dapat digunakan kembali mengikuti praktik terbaik kerangka kerja. Fokus utama adalah kemudahan penggunaan dan ekstensibilitas. Kami menggunakan komponen render murni, juga dikenal sebagai komponen stateless, bila memungkinkan untuk menjaga penggunaan memori seminimal mungkin. Komponen stateful hanya digunakan untuk komponen yang lebih besar, seperti Navigasi Responsif, di mana status sebenarnya diperlukan. Semua komponen diuji unit untuk memastikan kualitasnya."
+          } 
         ],
-        "keywords": "",
-        "notes": "",
-        "summarize": "",
+        "keywords": [
+          "Brief description of arc.js architecture",
+          "Advantages of arc.js architecture",
+          "Disadvantages of arc.js and solutions to them",
+          "Conclusion",
+          "Useful links",
+          "Layout",
+          "Flexbox",
+          "Style",
+          "Forms",
+          ""
+        ],
+        "notes": [
+          "Deskripsi singkat tentang arsitektur arc.js",
+          "Apa pendekatan arc.js? Pertama, itu adalah pendekatan atom untuk desain komponen.",
+          "Atom adalah komponen terkecil yang bertanggung jawab untuk satu fungsi spesifik. Misalnya, tombol dengan label, bidang teks, pemintal, dll.",
+          "Molekul adalah komponen yang mencakup beberapa komponen Atom, tetapi tidak sepenuhnya. Molekul dapat berupa jendela modal atau tombol dengan ikon di dalamnya.",
+          "Organisme biasanya merupakan komponen yang bertanggung jawab atas fungsi spesifik aplikasi. Misalnya, formulir pendaftaran, tabel dengan data dan filter.",
+          "Jujur saja, terkadang tidak mudah membagi komponen menjadi tiga grup ini, tetapi dengan arc.js Anda dapat dengan mudah mentransfer komponen-komponen ini di antara grup-grup tersebut.",
+          "Struktur kerangka adalah sebagai berikut:",
+          "Folder komponen bertanggung jawab untuk penyimpanan semua komponen (atom, molekul, organisme). Folder ini juga mencakup halaman, templat, tema dan, khususnya, berisi entri utama proyek - index.js dan App.js. Dalam folder ini, komponen bodoh ditempatkan juga.",
+          "Komponen bodoh adalah komponen yang tidak memiliki logika bisnis, hanya beroperasi dengan tindakan dan memodifikasi statusnya yang paling sederhana (jika perlu) untuk mengubah penampilannya.",
+          "Kontainer adalah folder yang berisi komponen pintar yang bertanggung jawab atas manajemen negara dan tindakan pengiriman.",
+          "Komponen cerdas mengirimkan tindakan, mendapat hasil tindakan dari negara dan memetakan status kesalahan atau memuat data. Dengan kata sederhana, komponen pintar berisi informasi bermakna yang tidak tersedia untuk komponen bodoh. Komponen pintar mencakup komponen bodoh dan memberikan keterampilan tambahan sesuai dengan prinsip pola dekorator.",
+          "Folder Services / api memiliki metode yang diperlukan untuk bekerja dengan REST API, yaitu dalam hal ini, implementasi penanganan kesalahan yang paling sederhana dan penggunaan fetch untuk membuat permintaan ke server.",
+          "Folder Layanan / validasi berisi semua validator yang diperlukan untuk memeriksa kebenaran data (dapat digunakan bersama dengan formulir redux)",
+          "Folder Store / entitas memiliki pengenalan skema, middleware untuk pemrosesan data api dan transformasi mereka ke dalam entitas, yang nyaman untuk penggunaan lebih lanjut. Ini diimplementasikan melalui normalizr (Anda dapat membaca tentang ini secara terperinci di sini: ","https://github.com/paularmstrong/normalizr). Ini adalah mekanisme yang sangat keren untuk pemetaan dua sisi, terutama jika perlu mengubah cara bagaimana data disajikan untuk ditampilkan. Dengan ini, ia mengirim data ke server seperti sebelumnya. Alat yang tak tergantikan.",
+          "Folder Store / resource berisi semua yang diperlukan untuk berinteraksi dengan api melalui redux-saga.",
+          "Keuntungan dari arsitektur arc.js:",
+          "Sebagai lapisan antara logika bisnis dan tampilan data, redux-saga digunakan. Ini memungkinkan membagi logika menjadi modul. Misalnya, otorisasi melalui media sosial dan permintaan ke sumber api dapat berfungsi sepenuhnya independen. Mereka tidak tahu apa-apa tentang satu sama lain. Pembagian seperti itu memungkinkan tindakan, sag, reduksi, dan penyeleksi disimpan secara terpisah untuk setiap modul. lihat disini https://cdn-images-1.medium.com/max/1600/0*tDf9l8sayDejyd0l",
+          "Menyederhanakan pemetaan dan transformasi data dari API. lihat disini https://cdn-images-1.medium.com/max/1600/0*OKnMrulI4Xc_AcOX",
+          "Usage of normalizr data schemes. lihat disni https://cdn-images-1.medium.com/max/1600/0*7pG6DDGyePq77svc",
+          "scheme title = resource title",
+          "Implementasi pendekatan sumber daya dan Flat REST. Jadi, pada kenyataannya, kami menggunakan kode yang sama untuk berinteraksi dengan sumber daya yang berbeda tanpa duplikasi (pelacakan status dan data bekerja secara terpisah!).",
+          "Sumber daya adalah url sekali pakai, yang tidak memiliki sarang dan jelas menceritakan tentang tindakan yang dilakukan. Sebagai contoh, di Flat REST perlu membuat / mengirim? UserId = 1 (di sini posting adalah sumber daya) permintaan untuk penyaringan data untuk mendapatkan posting pengguna. Sementara dalam REST sederhana, permintaan biasanya dilakukan dengan cara berikut: / users / 1 / post (ini mungkin memiliki beberapa sarang seperti / users / 1 / posting / 1 / komentar, dll.).",
+          "Karena sumber daya selalu berupa kata benda jamak (pos, pengguna, komentar, dll.), Lihat judul sumber daya dan pahami apa yang akan Anda dapatkan sebagai hasilnya! lihat disini https://cdn-images-1.medium.com/max/800/0*ofQVUvF1DL4Djy3K",
+          "The example of sag generator to get the array of data through resource title or aliases.", 
+          "https://cdn-images-1.medium.com/max/800/0*Slnhcct8Gp5XKH-V",
+          "Sebagai titik akhir, kami menyebutkan judul sumber daya, muatan bermanfaat - sebagai data, parameter tambahan, dan nilai header (contoh: token otorisasi - sebagai pengaturan).",
+          "Penggunaan penyeleksi untuk memilih data dari keadaan menyembunyikan detail pemilihan (karena mungkin ada beberapa sarang di objek status data). Dengan ini, duplikasi kode berkurang juga. Pendekatan ini memungkinkan mengubah metode permintaan data melalui pemilih sedemikian rupa sehingga perubahan hanya akan diterapkan untuk bagian tertentu dari kode. Sebagai contoh, alih-alih state.resource.detail kita akan menggunakan fromResource.getDetail (state), dan di dalam metode state.resource.detail akan disembunyikan.",
+          "Ini adalah bagaimana para penyeleksi terlihat, di mana sumber daya adalah posting, pengguna atau komentar. Kemudahan pengujian dan penulisan tes untuk komponen! Ini adalah fitur yang sangat penting karena kita dapat menjalankan tes untuk satu komponen dan tidak perlu mencari tes di seluruh daftar karena tes ditempatkan di folder dengan komponen. Ini meningkatkan portabilitas dan kemandirian komponen. Jika Anda menjalankan pengujian benang: perintah watch, seorang pekerja akan dengan jelas mengidentifikasi daftar tes yang akan dijalankan karena mereka berada di folder yang sama dengan kode komponen. Anda juga dapat dengan mudah mengedit atau menambahkan tes. Lihat disini https://cdn-images-1.medium.com/max/800/0*xW4wshxeYToDEET2",
+          "Berikut ini adalah tampilan folder komponen dengan tes",
+          "Pemetaan pemilih, sag, komponen, wadah bersifat otomatis yang memungkinkan untuk tidak memikirkan apakah Anda telah memasukkan impor ke index.js atau tidak. Anda cukup menggunakan format sintaks berikut:",
+          "impor {SomeComponent} dari komponen",
+          "atau",
+          "impor {fromResource} dari ‘store / selectors’",
+          "Pendekatan semacam itu memungkinkan mentransfer komponen di antara folder yang berbeda seperti komponen / atom atau komponen / molekul. Dengan ini, Anda mungkin tidak peduli bahwa sesuatu akan rusak karena menggunakan rute relatif seperti ‘../molecules/SomeComponent’ lokasi komponen ditentukan secara ketat. Oleh karena itu, dengan transfer komponen, Anda harus mengubah tautan ke komponen (jika kami memutuskan bahwa itu bukan molekul, tetapi atom atau organisme). Karena hal ini, tidak mungkin untuk membuat tautan siklikal ketika satu modul merujuk ke yang lain yang merujuk ke modul lain yang mengacu pada yang pertama. Dengan demikian, perlu untuk berpikir dan menggunakan prinsip DI untuk membagi dependensi dan mendapatkannya sebagai parameter. Lihat disini https://cdn-images-1.medium.com/max/800/0*2FAXp_epz6KEEmy1",
+          "Ini adalah contoh modul dari folder auth yang mengharuskan menentukan komponen untuk menampilkan status Masuk dalam proses otorisasi untuk menunjukkan kepada pengguna apa yang sedang terjadi jika proses akan memakan waktu lebih lama daripada yang diperkirakan.",
+          "Solusi untuk ini sudah jelas: karena kita tidak dapat mengimpor komponen - impor {SigningInPage} dari ‘komponen’, kita dapat menggunakan DI dan menentukan parameter untuk meneruskan komponen ke dalam fungsi yang membuat pembungkus auth. Akibatnya, kami menggunakan fungsi dengan cara berikut: lihat disini https://cdn-images-1.medium.com/max/800/0*52FFGZ6VV6QkbCdi",
+          "Dengan demikian, kami tidak memiliki tautan siklikal dan kami dapat menentukan halaman pemuatan berbeda untuk komponen halaman yang dibungkus. Dengan ini, komponen atau pembungkus asli tidak mengetahui detail komponen spesifik dan tentang bagaimana pembungkus bekerja.",
+          "Contoh kode yang menggabungkan semua komponen ke namespace_components dan wadah: lihat disini https://cdn-images-1.medium.com/max/800/0*m24VB9nBEMjgVmmQ",
+          "Disadvantages of arc.js implementation and solutions to them",
+          "Di sini penting untuk mengatakan bahwa kerugian spesifik untuk setiap proyek.",
+          "Saya mengungkapkan kelemahan berikut dari latihan saya:",
+          "Tidak adanya alias diatur untuk sumber yang sama. Alias ​​diperlukan untuk membuat permintaan untuk sumber yang sama tetapi tanpa tumpang tindih data. Misalnya, jika dalam salah satu formulir Anda meminta daftar semua kota dan dalam bentuk lain Anda memilih kota yang diberikan negara, mungkin ada konflik data. Untuk menghindari ini, perlu menambahkan alias. Untuk setiap alias, ada skema data khusus dalam entitas. Dengan demikian, permintaan dapat dibuat untuk posting, tetapi data dapat ditempatkan ke dalam koleksi yang disebut social_posts (jika kita memilih posting dengan tipe sosial), terima kasih kepada alias. Kemudian dengan penyeleksi, kami dapat memperoleh data dari fromResource.getList (status, ‘social_posts’) lihat disini https://cdn-images-1.medium.com/max/800/0*TQxbqQSfQ6SPFgwp",
+          "Di resourceAlias ​​posting diatur dan di sumber daya - social_posts. Akibatnya, permintaan akan dibuat untuk posting, tetapi data akan disimpan ke dalam social_posts",
+          "Tidak mungkin mendapatkan data respons secara terpisah dari judul API dan data json. Lihat disini https://cdn-images-1.medium.com/max/800/0*HZkLeUxb_tp762sf",
+          "Untuk mengatasi ini, kami mengubah sebagian metode parsing respons server. Dalam tajuk kita menulis informasi dari judul dan data dari badan respons ditulis ke dalam atribut json.",
+          "Ketidakmampuan untuk membaca kode komponen melalui Ctrl + Klik, menggunakan namespace dari komponen atau jenis kontainer. Namun, saya pikir itu bukan masalah besar karena Anda selalu dapat menemukan komponen dengan namanya.",
+          "Layout dengan Flexbox",
+          "Sebuah komponen dapat menentukan tata letak anak-anaknya menggunakan algoritma flexbox. Flexbox dirancang untuk memberikan tata letak yang konsisten pada ukuran layar yang berbeda.",
+          "Anda biasanya akan menggunakan kombinasi flexDirection, alignItemsdan justifyContentuntuk mencapai tata letak yang tepat.",
+          "Flexbox bekerja dengan cara yang sama di React Native seperti halnya di CSS di web, dengan beberapa pengecualian. Standarnya berbeda, dengan flexDirectiondefault columnbukan row, dan flexparameter hanya mendukung satu angka.",
+          "Arah Flex",
+          "Menambahkan flexDirectionke komponen stylemenentukan sumbu utama tata letaknya. Haruskah anak-anak diatur secara horizontal ( row) atau vertikal ( column)? Standarnya adalah column. Lihat disini https://facebook.github.io/react-native/docs/flexbox",
+          "Benarkan Konten",
+          "Menambahkan justifyContentke Style komponen menentukan distribusi anak di sepanjang sumbu utama . Haruskah anak-anak dibagikan pada awal, pusat, akhir, atau spasi secara merata? Pilihan yang tersedia adalah flex-start, center, flex-end, space-around, space-betweendan space-evenly.  Lihat disini https://facebook.github.io/react-native/docs/flexbox",
+          "Sejajarkan Item",
+          "Menambahkan alignItemske Style komponen menentukan penyelarasan anak-anak di sepanjang sumbu sekunder (jika sumbu primer adalah row, maka sumbu sekunder adalah column, dan sebaliknya). Haruskah anak-anak disejajarkan di awal, tengah, akhir, atau diregangkan untuk diisi? Pilihan yang tersedia adalah flex-start, center, flex-end, dan stretch.",
+          "Agar stretchmemiliki efek, anak-anak tidak boleh memiliki dimensi yang tetap di sepanjang sumbu sekunder. Dalam contoh berikut, pengaturan alignItems: stretchtidak melakukan apa-apa sampai width: 50dihapus dari anak-anak. Lihat disini https://facebook.github.io/react-native/docs/flexbox dan lanjutan lebih komponen pada layout lihat disini https://facebook.github.io/react-native/docs/layout-props ",
+          "Style",
+          "Dengan Bereaksi Asli, Anda tidak menggunakan bahasa khusus atau sintaks untuk menentukan Style. Anda cukup mendesain aplikasi Anda menggunakan JavaScript. Semua komponen inti menerima penyangga bernama style. Nama dan nilai Style biasanya cocok dengan cara kerja CSS di web, kecuali nama ditulis menggunakan casing unta, misalnya backgroundColorbukan background-color.",
+          "The styleprop bisa menjadi polos objek JavaScript tua. Itu yang paling sederhana dan apa yang biasanya kita gunakan sebagai contoh kode. Anda juga bisa melewatkan array Style - Style terakhir dalam array memiliki prioritas, sehingga Anda bisa menggunakan ini untuk mewarisi Style.",
+          "Ketika komponen bertambah kompleks, seringkali lebih bersih untuk digunakan StyleSheet.createuntuk mendefinisikan beberapa Style di satu tempat. Ini sebuah contoh: Lihat disini https://facebook.github.io/react-native/docs/style",
+          "Satu pola umum adalah membuat komponen Anda menerima stylepenyangga yang pada gilirannya digunakan untuk men-subkomponen Style. Anda dapat menggunakan ini untuk membuat Style kaskade seperti yang mereka lakukan di CSS. Lihat disini Komponen Style https://facebook.github.io/react-native/docs/text",
+          "React Native menyediakan serangkaian komponen untuk menyajikan daftar data. Secara umum, Anda ingin menggunakan FlatList atau SectionList .",
+          "The FlatList komponen menampilkan daftar bergulir perubahan, tapi sama terstruktur, data. FlatList berfungsi dengan baik untuk daftar data yang panjang, di mana jumlah item mungkin berubah seiring waktu. Berbeda dengan yang lebih umum ScrollView, FlatList hanya membuat elemen yang saat ini ditampilkan di layar, tidak semua elemen sekaligus.",
+          "The FlatList komponen membutuhkan dua alat peraga: data dan renderItem. data adalah sumber informasi untuk daftar. renderItem mengambil satu item dari sumber dan mengembalikan komponen yang diformat untuk dirender.",
+          "Contoh ini membuat FlatList data hardcode sederhana . Setiap item dalam dataalat peraga dirender sebagai Text komponen. The FlatListBasics komponen kemudian menerjemahkan FlatList dan semua Text komponen. Lihat disini https://facebook.github.io/react-native/docs/using-a-listview",
+          "Jika Anda ingin merender satu set data yang dipecah menjadi bagian logis, mungkin dengan header bagian, mirip dengan UITableViewdi iOS, maka SectionList adalah cara untuk pergi. Lihat disini https://facebook.github.io/react-native/docs/using-a-listview",
+          "Forms mudah untuk bereaksi dan bereaksi aplikasi asli dengan validasi.",
+          "Kami menggunakan pustaka validate.js yang hebat tetapi Anda dapat menggunakan validator khusus.",
+          "Opsional - Anda dapat menggunakan input silang reaksi, Contoh dengan input silang reaksi",
+          "Ini hanya komponen logika, bereaksi silang bentuk hanya membuat input Anda dengan nilai, metode, validator. Lihat disini https://reactnativeexample.com/easy-form-for-react-and-react-native-apps-with-validation/"
+        ],
+        "summarize": "Sebagai kesimpulan, tidak selalu diperlukan untuk menggunakan kerangka arc.js untuk mengatur arsitektur yang didukung, tetapi keterampilan untuk memperhatikan fitur keren dari arsitektur ini yang secara signifikan dapat menyederhanakan pekerjaan Anda sangat penting. Sebagai contoh, solusi paling sederhana untuk memeriksa status respon status.ok dan generasi pengecualian dalam kasus status.ok = false dalam layanan / api memungkinkan untuk menghindari penyisipan duplikasi kode untuk pemeriksaan dan pembuatan pengecualian dengan setiap pencabutan API dalam modul, gunakan panggilan ini. Penggunaan url = pendekatan sumber daya memungkinkan untuk tidak membuat kode yang sama untuk setiap url yang memproses respons server, kecuali perubahan url, dan mengatur parameter dalam urutan tertentu. Kami menggunakan pendekatan seperti generik yang bermanfaat dalam penggunaan kembali kode. Penggunaan pemilih memungkinkan menyembunyikan percabangan data dalam kondisi dari pengguna yang menggunakan pemilih. Karena ini kita dapat menampilkan hasil yang sama dengan struktur data yang berbeda dan dengan membuat perubahan hanya di satu tempat. Kerangka apa pun harus diselesaikan untuk membuatnya memenuhi semua persyaratan. Kerangka tanpa modifikasi apa pun jarang digunakan. Menempatkan logika interaksi api ke dalam modul redux-saga memungkinkan pemrosesan respons yang transparan dan pengaturan isPending, hasFailed, dan status lainnya. Dengan ini, jumlah kode berkurang secara signifikan. Pendekatan ini juga memungkinkan penggunaan generator yang menjadi populer sekarang karena kesederhanaan implementasi dan pengujian mereka. Yang lebih penting adalah bahwa hal yang sama dapat dilakukan oleh Saga! Hal ini memungkinkan untuk mendapatkan status yang berbeda dengan sumber daya yang berbeda tanpa lampiran ke rincian spesifik seperti merujuk pada data yang bekerja dengan penyeleksi dan efek slide redux-saga. Pendekatan ini mirip dengan penggunaan antarmuka dalam bahasa yang sangat diketik di mana Anda tahu metode apa yang diwakili oleh antarmuka tetapi tidak mengatakan apa-apa tentang implementasi mereka. Ini juga memungkinkan menghindari tautan siklikal dan distribusi atribut yang rumit ke komponen bersarang. Layout dengan Flexbox yaitu sebuah komponen yang dapat menentukan tata letak anak-anaknya dengan menggunakan algoritma flexbox. Flexbox dirancang untuk memberikan tata letak yang konsisten pada berbagai ukuran layar. biasanya akan menggunakan kombinasi flexDirection, alignItems, dan justifyContent untuk mencapai layout yang benar. Flexbox bekerja dengan cara yang sama seperti React Native seperti pada CSS di web, dengan beberapa pengecualian. Defaultnya berbeda, dengan flexDirection default ke kolom bukan baris, dan parameter flex hanya mendukung satu nomor. Pada react native untuk menampilkan suatu tampilan pada screen adalah menggunakan JSX. JSX merupakan syntax XML yang dimasukkan kedalam JavaScript yang digunakan pada apliksi React Native. Ada beberapa hal yang akan kita bahas pada tutorial kali ini yang berhubungan dengan style, antara lain yaitu: Merubah Font Pada React Native, Mengatur Lebar dan tinggi suatu objek, Layout Menggunakan Flexbox",
         "detail": [
           "Architecture & Project setup",
           "Layout",
@@ -24,35 +111,81 @@
         ],
         "useable_link": [
           {
-            "url":"",
-            "title":""
+            "url":"https://medium.com/the-andela-way/how-to-structure-a-react-native-app-for-scale-a29194cd33fc",
+            "title":"Architecture & Project setup"
+          },
+          {
+            "url":"https://facebook.github.io/react-native/docs/flexbox",
+            "title":"Layout"
+          },
+          {
+            "url":"https://facebook.github.io/react-native/docs/style",
+            "title":"Styling"
+          },
+          {
+            "url":"https://facebook.github.io/react-native/docs/using-a-listview",
+            "title":"Using Lists"
+          },
+          {
+            "url":"https://reactnativeexample.com/easy-form-for-react-and-react-native-apps-with-validation/",
+            "title":"Forms"
           }
         ]
       },
       {
         "title": "Navigation",
-        "competence": [],
+        "competence": [
+          "Dapat Menggenal Komponen-Komponen Navigation"
+        ],
         "course": [
           {
-            "title":"",
-            "content":""
+            "title":"React Native Navigation Patterns",
+            "content":"Aplikasi seluler jarang terdiri dari satu layar. Mengelola presentasi, dan transisi di antara, beberapa layar biasanya ditangani oleh apa yang dikenal sebagai navigator.Panduan ini mencakup berbagai komponen navigasi yang tersedia di React Native. Jika Anda baru memulai dengan navigasi, Anda mungkin ingin menggunakan React Navigation. React Navigation menyediakan solusi navigasi yang mudah digunakan, dengan kemampuan untuk menyajikan navigasi stack umum dan pola navigasi tab pada iOS dan Android.- Bereaksi Asli - Menavigasi Antara Adegan Tidak ingin menemukan kembali roda, kami menerima saran mereka dan menggunakan perpustakaan Navigasi Bereaksi. Selain itu, sepertinya orang dapat memanfaatkan perpustakaan ini untuk membuat pola navigasi khusus sendiri. Kami, bagaimanapun, hanya akan mengeksplorasi menggunakan empat pola navigasi out-of-the-box (navigator).catatan: Kami akan menganggap bahwa Anda sudah memiliki pemahaman dasar tentang React Navigation (Memulai dan Hello React Navigation sudah mencukupi)"
           }
         ],
         "keywords": ["react-navigation", "react-native-router-flux"],
         "notes": [
           "Salah satu hal yang penting untuk diketahui dalam membangun sebuah aplikasi mobile adalah navigasi, sebab dengan navigasi kita bisa berinteraksi antar satu component dengan component lainnya atau antara satu screen dengan screen lainnya.",
-          "Untuk membuat sebuah navigasi kita dapat menggunakan package yang telah banyak digunakan bahkan sampai pada tingkatan production yakni React-navigation."
+          "Untuk membuat sebuah navigasi kita dapat menggunakan package yang telah banyak digunakan bahkan sampai pada tingkatan production yakni React-navigation.",
+          "Pola navigasi seluler yang paling umum (dan dengan demikian paling mudah dipahami) disediakan melalui Stack Navigator.",
+          "Memberikan cara bagi aplikasi Anda untuk beralih antar layar tempat setiap layar baru ditempatkan di atas tumpukan.",
+          "Stack Navigator : Secara default, navigator tumpukan dikonfigurasikan untuk memiliki tampilan dan nuansa iOS dan Android yang akrab: layar baru meluncur dari kanan di iOS, menghilang dari bawah di Android. Pada iOS, navigator tumpukan juga dapat dikonfigurasikan ke Style modal tempat layar meluncur dari bawah.",
+          "Contoh (unduhan tersedia) menggunakan pola ini terdiri dari empat komponen yang disusun dalam hierarki: lihat disini https://cdn-images-1.medium.com/max/800/1*irxjaut2fsEY4CZm4baNyw.png",
+          "Pengamatan: Dalam diagram ini (dan diagram di masa depan), blok biru menyoroti elemen antarmuka pengguna navigasi. Dalam hal ini, layar atas memiliki menu item yang terhubung ke tiga layar level kedua. Setiap layar tingkat kedua memiliki tombol Kembali di bagian atas yang menghubungkan ke layar atas   Layar atas tetap terpasang terlepas apakah itu terlihat atau tidak. Layar tingkat kedua dipasang / dilepas saat dinavigasi ke / dari",
+          "Switch Navigator : Switch Navigator lebih seperti navigasi web; ini tidak menyediakan antarmuka pengguna navigasi bawaan dan layar dipasang / dilepas saat dinavigasi ke / dari. Tujuan SwitchNavigator adalah untuk hanya menampilkan satu layar pada satu waktu. Secara default, itu tidak menangani kembali tindakan dan me-reset rute ke keadaan default ketika Anda beralih. Lihat disini https://cdn-images-1.medium.com/max/800/1*yKxNwFTavJXM7gCzpNmKcA.png",
+          "Drawer Navigator : Drawer Navigator tidak menyediakan antarmuka pengguna navigasi yang terlihat sampai satu gesekan dari kiri ke kanan di tepi kiri layar, memperlihatkan menu tautan. Lihat disini https://cdn-images-1.medium.com/max/800/1*TiCoZxngJx8yKcSUImzwyQ.png",
+          "Bottom Tab Navigator : The Bottom Tab Navigator shares the same functional behavior as the Drawer Navigator with an alway visible navigational user interface (the tab menu at the bottom). A simple tab bar on the bottom of the screen that lets you switch between different routes. Routes are lazily initialized — their screen components are not mounted until they are first focused.",
+          "Drawer with Bottom Tab Navigators: Jika kita membutuhkan pola navigasi yang lebih kompleks, salah satu solusinya adalah menyarangkan dua navigator out-of-the-box. Lihat disini https://cdn-images-1.medium.com/max/800/1*GGgEjZn78jVtBklNKY9iEQ.png. Pengamatan: Dalam diagram, ellipse abu-abu mengilustrasikan bahwa Tab Navigator mempertahankan layar aktif ketika seseorang menavigasi ke layar B atau C Seperti yang diharapkan dengan navigator ini, layar dipasang saat pertama kali ditampilkan dan tetap terpasang sejak saat itu",
+          "Drawer with Stack Navigators: Dalam contoh ini (unduhan tersedia dari stack-navigator branch), kami menggunakan Drawer Navigator tingkat atas seperti sebelumnya dan mengganti layar A dengan Stack Navigator tingkat kedua dengan empat layar.Lihat disini https://cdn-images-1.medium.com/max/800/1*i1VaJ7qynTFtPXCDRpt_Vw.png. Pengamatan: Seperti contoh sebelumnya, Stack Navigator mempertahankan layar aktif ketika seseorang menavigasi ke layar B atau C Seperti yang diharapkan, layar tingkat sekunder (A1, A2, dan A3) di Stack Navigator, akan dilepas saat menavigasi kembali ke layar tingkat atas (AHome) Stack Navigator tingkat kedua dapat diganti dengan Switch Navigator; fungsi dasar yang sama",
+          "Stack with Bottom Tab Navigators : Dalam contoh ini (unduhan tersedia dari cabang-tab-navigator bawah ini), kami menggunakan Stack Navigator tingkat atas seperti sebelumnya dan mengganti layar A dengan Navigasi Tab Bawah tingkat kedua dengan tiga layar. BIsa lihat disini https://cdn-images-1.medium.com/max/800/1*ZHmkNYGMuXyoMuNo4rFTDg.png",
+          "Bottom Tab with Other Navigators : Saat mencoba kombinasi dari Navigator Tab Bawah tingkat atas dengan navigator sekunder lainnya (Stack, Switch, atau Drawer Navigators), saya menemukan antarmuka pengguna membingungkan. Saya menyimpulkan bahwa Navigator Tab Bawah paling baik digunakan sebagai navigator tingkat bawah; setiap tab jelas terkait dengan satu layar.",
+          "Other with Drawer Navigators : Juga, ketika mencoba kombinasi navigator tingkat atas (Stack, Switch, atau Tab Navigators) dengan sebagai Drawer Navigator sekunder, saya menemukan antarmuka pengguna membingungkan. Saya menyimpulkan bahwa Navigator Laci paling baik digunakan sebagai navigator tingkat atas; mengaktifkan / menonaktifkan slide-out bersyarat hanya membingungkan. Catatan: Satu-satunya pengecualian untuk aturan ini adalah; Saya dapat melihat bagaimana Switch Navigator tingkat atas dapat digunakan untuk beralih di antara status yang terdefinisi dengan baik (mis., Hanya menampilkan Drawer Navigator ketika diautentikasi).",
+          "Wrap Up : Wrote this article because I was having a hard time getting my head around the various ways of using React Navigator; especially nesting navigators. Hope you similarly found this useful.",
+          "Komponen inti dari aplikasi apa pun menavigasi antara berbagai rute / layar / layar. Saya sudah menganalisis berbagai solusi navigasi di masa lalu, tetapi minggu ini saya ingin meluangkan waktu melakukan tugas-tugas perutean umum menggunakan paket yang akhir-akhir ini saya gunakan, react-native-router-flux.Hari ini kita akan berjalan melalui pengaturan rute Anda, rute antara adegan dengan cara normal, menyiapkan tab, dan menggunakan modal. Ini adalah gambaran yang sangat mendasar dan semua yang saya bahas dapat ditemukan dalam dokumentasi resmi tetapi saya menemukan itu sedikit berlebihan ketika pertama kali memulai - ini adalah panduan yang saya harap saya miliki ketika saya mulai.",
+          "Setup : First thing we’ll do is set up our react native project and then install the react-native-router-flux package. Lihat disini https://shrib.com/#heEh2Muiiua2II3.lbQB",
+          "Kami kemudian akan menyiapkan proyek kami sehingga kami dapat dengan mudah menulis untuk iOS dan Android. Seperti berikut : mkdir app",
+          "Kemudian buat titik masuk kami di app / index.js. Lihat disini https://gist.githubusercontent.com/spencercarli/9d6a647da3a9ddb9024e8afa6a2b917e/raw/d3e7fa75ebe68d165204d4123dbfe9df57698e83/index.js",
+          "Akhirnya, kami ingin mengarahkan index.ios.js dan index.android.js ke titik entri baru kami, lintas platform,. Ganti kedua file dengan yang berikut ini. Lihat Disini https://gist.github.com/spencercarli/2582b28bebf64b189a552704e2069ccb/raw/2716cd44d391338193bc747de066cf7c9ea5e5f7/index.ios.js  lebih lengkapnya lihat disini https://medium.com/differential/react-native-basics-using-react-native-router-flux-f11e5128aff9"
         ],
-        "summarize": "Navigator component adalah sebuah component yang digunakan React Native untuk membuat navigasi ke views, di-release bersamaan dengan React Native pada tahun 2015, namun seiring perkembangan komunitas React Native yang terus bertumbuh memunculkan navigator yang pengimplementasiannya jauh lebih baik ketimbang pendahulunya, serta dibuat dalam bentuk package yang tersedia dan di-install melalui npm. Salah satu package navigation tersebut adalah React-navigation.",
+        "summarize": "Navigator component adalah sebuah component yang digunakan React Native untuk membuat navigasi ke views, di-release bersamaan dengan React Native pada tahun 2015, namun seiring perkembangan komunitas React Native yang terus bertumbuh memunculkan navigator yang pengimplementasiannya jauh lebih baik ketimbang pendahulunya, serta dibuat dalam bentuk package yang tersedia dan di-install melalui npm. Salah satu package navigation tersebut adalah React-navigation. Types of Navigations yaitu Stack Navigator, Switch Navigator, Drawer Navigator, Bottom Tab Navigator, Drawer with Bottom Tab Navigators, Drawer with Stack Navigators, Stack with Bottom Tab Navigators, Bottom Tab with Other Navigators, Other with Drawer Navigators, Wrap Up",
         "detail": [
           "Types of navigations",
           "react-navigation",
           "react-native-router-flux"
+      
         ],
         "useable_link": [
           {
-            "url":"",
-            "title":""
+            "url":"https://codeburst.io/react-native-navigation-patterns-9c2b6d15ddb3",
+            "title":"React Native Navigation Patterns"
+          },
+          {
+            "url":"https://medium.com/@rossbulat/introduction-to-react-navigation-and-navigators-in-react-native-3efcf7239a43",
+            "title":"Introduction to React Navigation and Navigators in React Native"
+          },
+          {
+            "url":"https://medium.com/differential/react-native-basics-using-react-native-router-flux-f11e5128aff9",
+            "title":"React Native Basics: Using react-native-router-flux"
           }
         ]
       },

@@ -453,39 +453,122 @@
     "master": [
       {
         "title": "Forms management in React",
-        "competence": [],
+        "competence": [
+          "Dapat membuat form dengan aturan react"
+        ],
         "course": [
           {
-            "title":"",
-            "content":""
+            "title":"Dasar Controlled Component dan Uncontrolled Component",
+            "content":"Form pada suatu aplikasi sangatlah penting dan pasti digunakan(minimal untuk form login). Form pada React memiliki behavior yang berbeda jika dibandingkan dengan form html biasannya. Bagaimanakah cara membuat form dengan aturan react ? silahkan simak ulasan ini. Pertama-tama kita akan membahas cara konvensional pembuatan form pada html biasa (non react). yakni dengan menggunakan syntax <form> yang memiliki salah satu attribute berupa method. Isi dari attribute tersebut adalah POST dan GET. Jika memilih method POST maka akan disubmit ke halaman lain (meksipun diarahkan pada halaman yang sama tetap akan melakukan reload) begitu pula dengan method GET. Berikut ini adalah contoh form sederhana yang menerima input berupa nama yang dibuat dengan cara konvensional pada html umumnya. Elemen form seperti dibawah ini bekerja sangat berbeda dibandingkan DOM pada react. Namun persamaanya adalah form konvensional seperti dibawah ini memiliki elemen penyusun yang sama yakni form input seperti <input>, <select> , <option> ataupun <textarea> serta <input type=button> untuk mensubmit form tersebut. Lihat di sini https://degananda.com/react-form-handling-dasar-controlled-component/. Pada react default behavior seperti itu tentunnya sangat tidak di izinkan untuk dilakukan meningat react adalah library yang digunakan untuk membuat SPA(Single page application). Aplikasi SPA tidak di izinkan untuk melakukan refresh (meski satu halaman) melainkan reload hanya pada komponen-komponen tertentu oleh karena itu disebut sebagai SPA. Perhatikan gambar dibawah ini saat form tersebut di klik submit maka yang terjadi adalah reload page.Form html diatas akan dihandle dengan menggunakan javascript sesuai dengan aturan react. Terdapat dua metode mengcontrol pada react yakni controlled component dan uncontrolled component. Dalam kebanyakan kasus, kami merekomendasikan penggunaan komponen yang terkontrol untuk mengimplementasikan formulir.Di sebuah controlled component, formulir data ditangani oleh komponen React. Alternatifnya adalah uncontrolled components, di mana data formulir ditangani oleh DOM itu sendiri.Untuk menulis  uncontrolled component, alih-alih menulis pengendali acara untuk setiap pembaruan State, Anda bisa menggunakan referensi untuk mendapatkan nilai formulir dari DOM. Karena uncontrolled component menyimpan sumber kebenaran dalam DOM, kadang-kadang lebih mudah untuk mengintegrasikan kode React dan non-React ketika menggunakan uncontrolled component. Ini juga bisa menjadi kode yang sedikit kurang jika Anda ingin cepat dan kotor. Jika tidak, Anda biasanya harus menggunakan komponen yang dikendalikan. Jika masih belum jelas jenis komponen apa yang harus Anda gunakan untuk situasi tertentu, Anda mungkin menemukan artikel ini pada input yang dikontrol dan tidak terkontrol untuk membantu."
           }
         ],
-        "keywords": "",
-        "notes": "",
-        "summarize": "",
+        "keywords": [
+          "Dasar Controlled Components",
+          "Dasar Uncontrolled Components"
+        ],
+        "notes": [
+          "Dasar Controlled Component : Syntax <input>, <select> , <textarea> dan form input lainnya melakukan manajemen “state” pada dirinnya sendiri dan state tersebut akan berubah sesuai dengan isi dari input tersebut. Pada react kita telah mengenah bahwa state bersifat mutable a.k.a dapat berubah nilainya. Perubahan tersebut dapat kita lakukan melalui fungsi setState().",
+          "Form pada react harus kita atur flow dari state. Baik pada saat form input pertama kali dibuat kemudian terjadi perubahan hingga pada saat disubmit oleh user. Hal seperti inilah yang disebut dengan controlled component. Pengaturan tersebut kita lakukan menggunakan javascript. Contohnya kita akan mentransformasikan kode html konvensional diatas menjadi react controlled component (form). Kasus dibawah ini form berupa satu buah <input>. Code lihat di sini https://degananda.com/react-form-handling-dasar-controlled-component/. ",
+          "Ada beberapa hal yang perlu dilakukan dalam membuat controlled component pada react (konteks : form). Untuk mempermudah memahami berikut ini adalah langkah-langkahnya : ",
+          "Buat form, Form handler menggunakan attribute onSubmit , ingat tulisan menggunakan camelCase,",
+          " Buat input , contoh diatas adalah <input type=”text”> Berikan dua atribut (wajib) pada input yakni value dan onChange",
+          "Buat state yang merupakan model dari form. Contoh diatas object formValue dengan child Berupa name",
+          "Atribut value pada input diambil dari nilai state",
+          "Atribut onChange berikan nilai berupa formHandler yang akan memanggil fungsi setState. Fungsinnya adalah merubah state pada komponen.",
+          "Pada form handler (onSubmit) jangan lupa untuk memberikan fungsi e.preventDefault() untuk menghilangkan default behavior dari browser agar saat di klik submit tidak mengarahkan ke halaman baru.",
+          "Jangan lupa melakukan bind terhadap handler pada form. hal ini wajib , jika handler tidak dilakukan binding terhadap komponen maka tidak dapat menggunakan fungsi this. Padahal fungsi this tersebut digunakan untuk merubah state dari komponen (setState).",
+          "untuk mengambil nilai dari suatu input kita menggunakan handler dimana fungsi untuk mengambil valuenya adalah event.target.value. Jika lupa apa saja nilai pada event tersebut dapat melakukan logging pada browser dengan perintah console.log. Hasil bisa lihat disini https://degananda.com/react-form-handling-dasar-controlled-component ",
+          "Uncontrolled Components: Default Values, dalam  lifecycle rendering React, atribut nilai pada elemen formulir akan menimpa nilai dalam DOM. Dengan uncontrolled component, Anda sering ingin React menentukan nilai awal, tetapi membiarkan pembaruan berikutnya tidak terkontrol. Untuk menangani kasus ini, Anda dapat menentukan atribut defaultValue alih-alih nilai. Contoh https://reactjs.org/docs/uncontrolled-components.html. The file input Tag, Dalam HTML, <input type = file > memungkinkan pengguna memilih satu atau lebih file dari penyimpanan perangkat mereka untuk diunggah ke server atau dimanipulasi oleh JavaScript melalui File API. <input type = file /> Dalam React, <input type = file /> selalu merupakan komponen yang tidak terkontrol karena nilainya hanya dapat ditetapkan oleh pengguna, dan tidak secara terprogram."
+
+        ],
+        "summarize": "Form pada react harus kita atur flow dari state. Baik pada saat form input pertama kali dibuat kemudian terjadi perubahan hingga pada saat disubmit oleh user. Hal seperti inilah yang disebut dengan controlled component.Ini berkaitan dengan komponen DOM stateful (elemen formulir) dan dokumen React menjelaskan perbedaan: Komponen Terkendali adalah komponen yang mengambil nilainya saat ini melalui alat peraga dan memberi tahu perubahan melalui panggilan balik seperti onChange. Komponen induk Controls itu dengan menangani panggilan balik dan mengelola statusnya sendiri dan meneruskan nilai-nilai baru sebagai alat peraga ke komponen yang dikontrol. Anda juga bisa menyebutnya dumb component. Komponen yang tidak terkontrol adalah komponen yang menyimpan keadaannya sendiri secara internal, dan Anda meminta DOM menggunakan referensi untuk menemukan nilai saat ini ketika Anda membutuhkannya. Ini sedikit lebih mirip HTML tradisional.",
         "detail": [
           "Controlled Components",
           "Uncontrolled Components"
         ],
-        "useable_link": []
+        "useable_link": [
+          {
+            "url": "https://degananda.com/react-form-handling-dasar-controlled-component/",
+            "title": "Dasar Controlled Component"
+          },
+          {
+            "url": "https://reactjs.org/docs/uncontrolled-components.html",
+            "title": "Dasar Uncontrolled Components"
+          }
+        ]
       },
       {
         "title": "Authentication",
-        "competence": [],
+        "competence": [
+          "Dapat memahami Struktur File Authentication ",
+          "Dapat membuat system Authentication"
+        ],
         "course": [
           {
-            "title":"",
-            "content":""
+            "title":"Using JWT (JSON Web Tokens) to authorize users and protect API routes",
+
+            "content":"Jadi backend Anda memiliki beberapa rute API yang perlu dilindungi dan beberapa pengguna yang membutuhkan otorisasi. Sama seperti saya pada satu titik, Anda mungkin bertanya-tanya bagaimana ini bisa dicapai. Untungnya, kami memiliki JSON Web Tokens (JWT) (antara lain) untuk itu. Apa itu JWT? Tidak ada cara yang lebih baik untuk menjelaskannya selain langsung dari situs web JWT:JSON Web Token (JWT) adalah standar terbuka (RFC 7519) yang mendefinisikan cara yang ringkas dan mandiri untuk mentransmisikan informasi antar pihak secara aman sebagai objek JSON. Informasi ini dapat diverifikasi dan dipercaya karena ditandatangani secara digital. JWT dapat ditandatangani menggunakan rahasia (dengan algoritma HMAC) atau pasangan kunci publik / pribadi menggunakan RSA atau ECDSA.Salah satu kasus penggunaan terbesar untuk JWT adalah otorisasi. Kami dapat membuat token JWT di backend yang khusus untuk pengguna, meneruskan token JWT ini ke frontend, dan kemudian frontend kami dapat mengirimkan token ini bersama permintaan untuk mengakses rute API yang dilindungi.Token JWT dapat diberikan waktu kedaluwarsa. Mereka juga dapat dihasilkan tanpa kedaluwarsa, namun saya percaya ini adalah praktik terbaik untuk memastikan token Anda memiliki kedaluwarsa dan diperbarui pada interval tertentu. Ini akan mengurangi ancaman satu token tunggal yang dicuri dan digunakan untuk mengakses rute berulang-ulang.Mari kita sentuh keamanan token JWT untuk beberapa saat lagi. Ketika token JWT dihasilkan, ada rahasia yang digunakan untuk menghasilkan token. Hanya server yang harus mengetahui rahasia ini. Jika seseorang mengubah data yang terkandung dalam JWT, server akan gagal untuk memecahkan kode itu. Ini berarti server dapat mempercayai JWT yang dapat diuraikan dan diverifikasi. Seorang hacker juga dapat mencegat lalu lintas jaringan antara server dan klien untuk mendapatkan token JWT (seperti halnya cookie). Ini dapat dicegah dengan selalu mengirim token bolak-balik melalui HTTPS. Adalah wajib bahwa HTTPS harus digunakan dengan JWT.Saya pasti akan merekomendasikan membaca lebih mendalam tentang keamanan token JWT. Ini sangat penting, terutama jika aplikasi Anda berisi data sensitif."
           }
         ],
-        "keywords": "",
-        "notes": "",
-        "summarize": "",
+        "keywords": [
+          "File Structure",
+          "User Model",
+          "Generating and verifying JWT Tokens"
+        ],
+        "notes": [
+          "File Structure",
+          "Berikut adalah struktur file dasar dari contoh ini: https://cdn-images-1.medium.com/max/800/1*q-Xo_-nu6763LtMuseyEYw.png Cukup mudah. Kami memiliki pengaturan user pengguna dummy ’yang sangat sederhana di server / model / dummyUser.js yang akan kami gunakan untuk mengejek pengguna dalam basis data, memungkinkan kami untuk‘ masuk log ’dan menghasilkan token JWT. Lebih lanjut tentang itu dalam beberapa.",
+          "User Model",
+          "Seperti apa data pengguna palsu itu: https://gist.githubusercontent.com/maisonm/e3df4f51d0aced8d02177bd10c43fe20/raw/2343d0e9b4557518efbd8f2765af89319df905f6/dummyUser.js Kami akan mengimpor modul ini ke file rute / api / userRoute.js sehingga kami dapat mengakses pengguna tiruan kami. Biasanya, pengguna akan ditarik dari database, tetapi untuk saat ini, ini berfungsi dengan baik sebagai contoh.",
+          "Generating and verifying JWT Tokens",
+          "Sekarang kita sudah memiliki semua itu, mari kita masuk ke 'daging & kentang' JWT dan bagaimana kita menggunakannya. Ada dua fungsi JWT yang akan menangani semuanya dalam contoh ini:",
+          "jwt.sign() jwt.sign(payload, secretkey, [options, callback]) Fungsi pertama jwt.sign () akan menghasilkan token JWT, menetapkannya ke objek pengguna, dan kemudian mengembalikan token JWT itu sehingga kami dapat meneruskannya ke tempat yang mungkin kami butuhkan. Itu bisa asinkron atau sinkron tergantung jika ada panggilan balik yang disediakan. Parameter payload akan menjadi objek pengguna dalam kasus kami, kunci rahasia dibuat oleh Anda, dan itu bisa apa saja. Parameter panggilan balik adalah tempat kami menangani pengiriman token kami, dan parameter opsi akan menjadi tempat mengatur waktu kedaluwarsa di antara hal-hal lain.Catatan: Penting bahwa dalam produksi Anda TIDAK PERNAH MEMILIKI KUNCI RAHASIA ANDA TAMPAKNYA seperti dalam contoh ini. Ini bukan kode produksi, ini hanyalah contoh cara kerja JWT. Kunci rahasia Anda harus disimpan dalam variabel lingkungan, seperti semua informasi sensitif.",
+          "jwt.verify() jwt.verify(token, secretkey, [options, callback]), Fungsi asinkron kedua jwt.verify () akan memverifikasi token pengguna saat rute yang dilindungi diakses. Dibutuhkan token sebagai satu parameter, kunci rahasia yang Anda tetapkan dalam fungsi jwt.sign (), dan kemudian Anda memiliki opsi dan parameter panggilan balik. Callback akan menjadi tempat kita dapat mengakses dan mengirim data yang dilindungi.",
+          "Menyatukan Semuanya, Mari kita luangkan waktu sejenak untuk melihat ikhtisar rute / api / userRoutes.js: lihat disini code https://gist.githubusercontent.com/maisonm/b76339d109da61f11225fd2cc9ce5a53/raw/c1b3db381aa42ba7e7e99aa410108aa77994bee1/userRoutes.js ",
+          "Mulai dari atas kami hanya mengimpor JWT dan model pengguna tiruan kami. Cukup jelas, jika Anda terbiasa dengan node, jadi mari kita lanjutkan dan diskusikan.Sekarang benar-benar menyenangkan. Online 6 kami memiliki rute POST yang ditemukan di / user / login yang menangani sistem mock login kami. Kami memeriksa untuk memastikan bahwa nama pengguna dan kata sandi cocok dengan pengguna tiruan kami, dan jika demikian kami membuat token JWT untuk pengguna pada baris 14 dengan: Melewati objek pengguna kami, yang dalam hal ini berasal dari model pengguna tiruan di models / dummyUser.js, Kunci rahasia yang dalam hal ini adalah privatekey, Parameter opsi {expiresIn: '1h'}, Akhirnya, panggilan balik yang berisi parameter (err, token)",
+          "Jika kesalahan dikembalikan dalam panggilan balik, kami mengirim kode Forbidden (403) untuk menandakan bahwa akses .. terlarang.",
+          "Jika tidak ada kesalahan yang dikembalikan dalam panggilan balik, kami mengizinkan akses ke token yang dihasilkan JWT. Sekarang ketika kami melewati objek pengguna {user}, ini adalah bagaimana kami 'melampirkan' token ke data pengguna. Ini memungkinkan kami mengidentifikasi token JWT tertentu dengan data pengguna.",
+          "Logging In",
+          "Ini seperti apa ketika kita mengakses / pengguna / login melalui POSTman: lihat disini https://cdn-images-1.medium.com/max/800/1*tKPUucRQexEUPMRn7ZdAbg.gif",
+          "Jadi di POSTman saya membuat permintaan POST ke rute / user / login dengan data formulir. Saya menyampaikan pasangan nama pengguna dan kunci kata sandi / nilai untuk mensimulasikan pengguna tiruan masuk.",
+          "Perhatikan bahwa kata sandi dan nama pengguna cocok dengan kata sandi pengguna tunggal kami. Karena semuanya cocok dan pengguna ‘login’, fungsi jwt.sign () yang ditemukan dalam rute login mengembalikan token JWT yang unik. Sempurna, tepat seperti yang kita inginkan. Token ini yang akan digunakan untuk mengakses rute yang dilindungi kami. Dalam aplikasi produksi, ini akan dikirim ke klien frontend seperti React untuk digunakan ketika klien membuat permintaan untuk rute backend yang dilindungi.",
+          "Hanya dengan sedikit menyentuh pada tanggal kedaluwarsa, aplikasi Anda perlu memiliki semacam logika yang memeriksa token yang kedaluwarsa sehingga dapat menangani pengiriman pengguna kembali ke halaman login untuk diberi token baru yang baru. Misalnya, pikirkan jika Anda masuk ke rekening bank Anda. Setelah beberapa menit tidak aktif, Anda biasanya akan keluar dan diminta untuk masuk kembali. Ini berfungsi dua kali lipat karena A) mengeluarkan Anda dari sesi Anda jika Anda lupa pada diri sendiri dan B) itu memberi kesempatan pada aplikasi. untuk menyegarkan otorisasi apa pun yang digunakannya.",
+          "Requesting Protected Routes",
+          "Sayangnya, langkah terakhir untuk seluruh aliran otorisasi JWT ini. Mari kita mulai dengan POSTman gif lain untuk menunjukkan apa yang akan kita akses, maka saya akan menjelaskan apa yang sedang terjadi.",
+          "Pertama inilah yang terjadi jika kami mencoba mengakses rute yang dilindungi tanpa token JWT: lihat sini https://cdn-images-1.medium.com/max/800/1*0iczAqoPTtAkMlrMNBOfhA.gif",
+          "403 juga dibuang ketika token tidak valid. Jadi seperti kode yang ditentukan dalam rute / user / login GET mulai pada baris 24, ketika kita gagal mengakses rute yang dilindungi dengan token JWT, panggilan balik di jwt.verify () mengembalikan err. Kesalahan ini memungkinkan kami mengirimkan sinyal kelelawar 403 Terlarang ke apa pun yang gagal meminta rute.",
+          "Di sisi lain, ini seperti apa ketika kita mendapatkan sinyal kelelawar 200 OK: lihat disni https://cdn-images-1.medium.com/max/800/1*2gnUYOHgGr_lcCbchf8rBQ.gif",
+          "Tunggu apa? Anda mungkin memperhatikan bahwa saya melewati token JWT di tajuk bernama Otorisasi dengan permintaan GET. Anda juga mungkin memperhatikan Bearer yang ditambahkan sebelum token JWT. Biarkan saya jelaskan.",
+          "Otorisasi: <type> <credentials> adalah pola yang diperkenalkan oleh W3C di HTTP 1.0. Situs yang menggunakan pola ini kemungkinan besar menerapkan token pembawa OAuth 2.0. Kerangka Otorisasi OAuth 2.0 menetapkan sejumlah persyaratan lain untuk pengesahan otorisasi. Misalnya, membutuhkan penggunaan HTTPS. Ingat, HTTPS membuat pengiriman token dari server ke klien lebih aman. Berikut ini info lebih lanjut tentang Kerangka Kerja OAuth 2.0.",
+          "Jadi dengan mengingat hal itu, tajuk Otorisasi kami membutuhkan Bearer sebagai jenisnya, dengan token JWT sebagai kredensial. Mengetahui hal ini, itu membuat penjelasan untuk fungsi checkToken () yang ditemukan pada baris 45 lebih masuk akal. Fungsi ini diteruskan ke rute terlindungi kami seperti:",
+          "app.get ('/ pengguna / login', checkToken, (req, res) => {// Callback});",
+          "Dalam fungsi checkToken (), kami memeriksa untuk memastikan token tidak terdefinisi, dan kemudian kami membagi req.header menjadi array. Ini karena tajuk Otorisasi kembali sebagai string. Misalnya: Bearer jh3uj3jedjd3.",
+          "Kita tahu bahwa metode split () mengubah string menjadi array sub-string. Jadi kita dapat dengan aman berasumsi bahwa tajuk yang sekarang terpecah terlihat seperti ['Pembawa', 'jh3uj3jedjd3']. Itulah sebabnya pada baris 50 kita menetapkan const token = bearer [1] dengan indeks 1. Jelas dari contoh bahwa token berada pada indeks 1 dalam array.",
+          "Setelah ini, pada baris 52 set atur req.token sama dengan token yang kita dapatkan dari header Otorisasi. Kemudian kita gunakan next () untuk memanggil pengendali rute berikutnya.",
+          "Akhirnya, kami menangani tajuk yang tidak ditentukan dengan mengirimkan ole 'fashion Forbidden 403 yang bagus.",
+          "Accessing the Protected Route",
+          "Jadi, kami telah melewati tajuk Otorisasi dengan token ke rute yang dilindungi. Kami telah memverifikasi token untuk tidak ditentukan, dan kami telah menghapus string Bearer dari header di fungsi checkToken (), meninggalkan kami hanya dengan token. Sekarang, kita perlu menggunakan potongan terakhir dari teka-teki: jwt.verify () untuk mendapatkan akses ke data yang diotorisasi. Begini cara kerjanya.",
+          "jwt.verify (token, 'privatekey', [options, callback]) akan menggunakan req.token sebagai parameter token, dalam hal ini 'privatekey' sebagai kunci rahasia, dan kemudian panggilan kembali kita akan terlihat seperti: (err, Authorized data ) => {// panggilan balik}. Jika parameter err dikembalikan, sama seperti yang lain akan menandakan untuk kemudian mengembalikan respons Terlarang 403 untuk membiarkan siapa pun yang tahu verifikasi token gagal. Jika kami melewati kunci rahasia yang salah di sini, kami akan selalu mendapatkan kembali kode respons 403.",
+          "Parameter data resmi adalah roti dan mentega. Ini berisi semua data yang dilindungi yang kami minta. Berikut adalah data pengguna yang terlihat seperti ketika berhasil diakses dari POSTman: lihat sini https://gist.github.com/maisonm/cf4e669e311269e162482b7f329d1331#file-authorizeddata-js",
+          "Kami menerima data pengguna ini karena ini adalah apa yang kami berikan sebagai parameter payload dari fungsi jwt.sign (). Perhatikan pasangan kunci / nilai 'iat' dan 'exp'. iat merujuk pada 'dikeluarkan pada' yang merupakan tindakan default. Ini adalah waktu token dikeluarkan di. Ini diatur ke default kecuali noTimeStamp dideklarasikan. exp adalah opsi kedaluwarsa yang kami lewati di jwt.sign (). Ini hanya saat token berakhir. Dari sini, Anda dapat mengirim data ini ke klien Anda, dan lakukan sesuai keinginan Anda.",
+          "Contoh cepat menggunakan fetch () dari klien untuk meminta akses ke rute yang dilindungi: ",
+          "Bayangkan ketika pengguna login, bahwa token JWT dihasilkan dan kemudian diteruskan ke klien untuk penyimpanan. Berpura-pura sejenak bahwa authToken adalah variabel yang menyimpan token JWT yang valid. Mengirim tajuk Otorisasi dengan permintaan pengambilan memungkinkan akses ke rute yang dilindungi mengingat token yang disahkan valid. Code lihat sini https://shrib.com/#gDB16RQLc8-7UmftPJJX"
+        ],
+        "summarize": "JSON Web Token (JWT) adalah cara untuk menghasilkan token auth. Ini adalah standar terbuka (RFC 7519) yang menetapkan cara sederhana untuk mentransmisikan informasi antara klien dan server dengan aman sebagai objek JSON.",
         "detail": [
           "JWT",
           "Authorization, public and private pages"
         ],
-        "useable_link": []
+        "useable_link": [
+          {
+            "url": "https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e",
+            "title": "Using JWT to authorize users and protect API routes "
+          },
+          {
+            "url": "https://medium.com/@rajaraodv/securing-react-redux-apps-with-jwt-tokens-fcfe81356ea0",
+            "title": "Other Source : Securing React Redux Apps With JWT Tokens  "
+          }
+        ]
       }
     ]
   },
